@@ -1,0 +1,47 @@
+/* Genel Buton Stili */
+.gameButton {
+    margin: 8px 0; /* Butonlar arasında daha fazla boşluk */
+    padding: 10px 20px; /* Daha fazla iç boşluk ile butonları büyüt */
+    font-weight: bold; /* Kalın yazı tipi */
+    font-size: 1.1em; /* Daha büyük yazı boyutu */
+    border-radius: 8px; /* Yuvarlatılmış köşeler */
+    color: #fff; /* Beyaz yazı rengi */
+    background-color: #007bff; /* Ana buton rengi */
+    border: none; /* Kenarlıkları kaldır */
+    cursor: pointer; /* İmleci işaretçi yap */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Hover efektleri için geçiş */
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3); /* Hafif gölge */
+}
+
+/* Hover Efekti */
+.gameButton:hover {
+    background-color: #0056b3; /* Daha koyu bir mavi */
+    box-shadow: 0 6px 8px rgba(0, 86, 179, 0.4); /* Gölgeyi güçlendir */
+    transform: translateY(-2px); /* Butonu hafif yukarı kaldır */
+}
+
+/* Tıklama Efekti */
+.gameButton:active {
+    background-color: #004085; /* Daha koyu bir mavi */
+    box-shadow: 0 3px 5px rgba(0, 64, 133, 0.3); /* Gölgeyi küçültür */
+    transform: translateY(0); /* Tıklanırken butonu eski yerine getirir */
+}
+
+/* Farklı Durumlar için Renk Stilleri */
+.gameButton--primary {
+    background-color: #007bff;
+}
+
+.gameButton--success {
+    background-color: #28a745;
+}
+
+.gameButton--danger {
+    background-color: #dc3545;
+}
+
+.gameButton--primary:hover,
+.gameButton--success:hover,
+.gameButton--danger:hover {
+    filter: brightness(0.9); /* Hover olduğunda hafif koyulaştırır */
+}

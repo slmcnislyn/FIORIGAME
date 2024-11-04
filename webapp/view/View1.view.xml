@@ -1,0 +1,71 @@
+<mvc:View
+    controllerName="com.smod.ux.customcontrol.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:custom="com.smod.ux.customcontrol.custom"
+    xmlns:core="sap.ui.core" 
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+    
+        <content>
+            <VBox id="timerContainer" class="timer-container" />
+            <VBox class="inputContainer">
+                <Input id="usernameInput" placeholder="Kullanıcı Adı" />
+
+                <Select id="difficultySelect">
+                    <items>
+                        <core:Item key="easy" text="Kolay" />
+                        <core:Item key="medium" text="Orta" />
+                        <core:Item key="hard" text="Zor" />
+                    </items>
+                </Select>
+
+                <!-- Oyun butonları -->
+                <Button
+                id="startbutton"
+                    text="Başla"
+                    press=".onStartGame"
+                    width="100%"
+                    type="Emphasized"
+                    class="gameButton"
+                />
+                <Button
+                    text="Durdur"
+                    press=".onPauseGame"
+                    width="100%"
+                    type="Reject"
+                    class="gameButton"
+                />
+                <Button
+                    text="Yeniden Başlat"
+                    press=".onRestartGame"
+                    width="100%"
+                    type="Default"
+                    class="gameButton"
+                />
+                <Button
+                    text="Devam Et"
+                    press=".onResumeGame"
+                    enabled="{= ${controller>/isPaused} }"
+                    width="100%"
+                    type="Accept"
+                    class="gameButton"
+                />
+            </VBox>
+
+            <custom:CardContainer
+                id="cardContainer"
+                click=".onCardClick"
+                visible="false"
+                defaultSpan="XL2 L2 M4 S6"
+            >
+                <!-- Kartlar buraya dinamik olarak eklenecek -->
+            </custom:CardContainer>
+        </content>
+    </Page>
+</mvc:View>
